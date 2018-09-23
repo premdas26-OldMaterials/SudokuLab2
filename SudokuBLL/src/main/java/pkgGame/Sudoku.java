@@ -50,7 +50,7 @@ public class Sudoku extends LatinSquare {
 	}
 
 	protected boolean isSudoku() {
-		if(super.isLatinSquare() && !super.ContainsZeros())
+		if(super.isLatinSquare() && !super.ContainsZero())
 			for(int i=0; i<iSize;i++) {
 				if(hasAllValues(getRow(0),getRegion(i)){
 					return true;
@@ -60,6 +60,22 @@ public class Sudoku extends LatinSquare {
 	}
 
 	protected boolean isPartialSudoku() {
+		if(super.ContainsZero()) {
+			for(int i=0;i<iSize;i++) {
+				if(super.hasDuplicates(super.getRow(i))) {
+					return false;
+				}
+				else if(super.hasDuplicates(super.getColumn(i))) {
+					return false;
+				}
+				else if(super.hasDuplicates(this.getRegion(i))) {
+					return false;
+				}
+				else {
+					return true;
+				}
+			}
+		}
 		return false;
 	}
 

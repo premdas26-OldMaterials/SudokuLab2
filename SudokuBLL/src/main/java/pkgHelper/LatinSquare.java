@@ -77,7 +77,10 @@ public class LatinSquare {
 		Arrays.sort(sortedArray);
 
 		for (int i = 0; i < sortedArray.length - 1; i++) {
-			if (sortedArray[i] == sortedArray[i + 1]) {
+			if (sortedArray[i] ==0) {
+				continue;
+			}
+			else if(sortedArray[i] == sortedArray[i + 1]) {
 				hasDuplicates = true;
 				break;
 			}
