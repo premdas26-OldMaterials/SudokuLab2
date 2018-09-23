@@ -54,4 +54,20 @@ public class SudokuTest {
 		assertFalse(puzzle.isPartialSudoku());
 	}
 	
+	@Test
+	public void isValidValue_test1() throws java.lang.Exception {
+		
+		int[][] sud = {{1,0,3,0},{0,0,0,2},{2,0,4,3},{0,3,2,0}};
+		Sudoku s = new Sudoku(sud);
+		assertTrue(s.isValidValue(1, 1, 4));
+		
+	}
+	
+	@Test
+	public void isValidValue_test2() throws java.lang.Exception {
+		
+		int[][] sud = {{1,0,3,0},{0,0,0,2},{2,0,4,3},{0,3,2,0}};
+		Sudoku s = new Sudoku(sud);
+		assertFalse(s.isValidValue(1, 1, 3));
+	}
 }
