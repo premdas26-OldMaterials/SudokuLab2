@@ -10,6 +10,7 @@ public class Sudoku extends LatinSquare{
 	private int iSqrtSize;
 	
 	public Sudoku(int iSize) throws java.lang.Exception {
+		super();
 		if (Math.sqrt(iSize) == (int)(Math.sqrt(iSize))) {
 			int iSqrtSize = (int) Math.sqrt(iSize);
 		}else throw new java.lang.Exception();
