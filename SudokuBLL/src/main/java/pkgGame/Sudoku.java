@@ -19,6 +19,18 @@ public class Sudoku extends LatinSquare {
 
 	public Sudoku(int[][] latinSquare) throws java.lang.Exception {
 		super(latinSquare);
+		for(int i = 0; i<latinSquare.length;i++) {
+			if(latinSquare[i].length!=latinSquare.length) {
+				throw new java.lang.Exception();
+			}
+		}
+		try {
+			this.iSqrtSize = (int) (Math.pow(latinSquare.length, .5));
+			this.iSize = latinSquare.length;
+		}
+		catch(java.lang.Exception e) {
+			throw e;
+		}
 	}
 
 	protected int[][] getPuzzle() {
