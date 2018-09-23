@@ -49,6 +49,12 @@ public class Sudoku extends LatinSquare {
 	}
 
 	protected boolean isSudoku() {
+		if(super.isLatinSquare() && !super.ContainsZeros())
+			for(int i=0; i<iSize;i++) {
+				if(hasAllValues(getRow(0),getRegion(i)){
+					return true;
+				}
+			}
 		return false;
 	}
 
@@ -60,4 +66,3 @@ public class Sudoku extends LatinSquare {
 		return false;
 	}
 }
-
