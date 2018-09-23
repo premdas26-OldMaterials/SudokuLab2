@@ -64,11 +64,14 @@ public class Sudoku extends LatinSquare {
 	protected boolean isSudoku() {
 		if(super.isLatinSquare() && !super.ContainsZero())
 			for(int i=0; i<iSize;i++) {
-				if(hasAllValues(getRow(0),getRegion(i))){
-					return true;
+				if(!hasAllValues(getRow(0),getRegion(i))){
+					return false;
+				}
+				if(hasDuplicates(getRegion(i))) {
+					return false;
 				}
 			}
-		return false;
+		return true;
 	}
 
 	protected boolean isPartialSudoku() {
