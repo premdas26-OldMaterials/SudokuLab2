@@ -6,11 +6,16 @@ import pkgHelper.LatinSquare;
 
 public class Sudoku extends LatinSquare{
 	
-	public Sudoku() {
-		super();
+	private int iSize;
+	private int iSqrtSize;
+	
+	public Sudoku(int iSize) throws java.lang.Exception {
+		if (Math.sqrt(iSize) == (int)(Math.sqrt(iSize))) {
+			int iSqrtSize = (int) Math.sqrt(iSize);
+		}else throw new java.lang.Exception();
 	}
 	
-	public Sudoku(int[][] latinSquare) {
+	public Sudoku(int[][] latinSquare) throws java.lang.Exception {
 		super(latinSquare);
 	}
 	
