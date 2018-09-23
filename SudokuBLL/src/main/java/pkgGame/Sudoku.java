@@ -60,3 +60,4 @@ public class Sudoku extends LatinSquare {
 		return false;
 	}
 }
+
