@@ -24,8 +24,22 @@ public class Sudoku extends LatinSquare{
 		return super.getLatinSquare();
 	}
 	
-	protected int[] getRegion(int iRegionNbr) {
-		return null;
+	protected int[] getRegion(int r) {
+		int[] reg = new int[super.getLatinSquare().length];
+		
+		int i = (r % iSqrtSize) * iSqrtSize;
+		int j = (r / iSqrtSize) * iSqrtSize;
+		int iMax = i + iSqrtSize;
+		int jMax = j + iSqrtSize;
+		int iCnt = 0;
+		
+		for (; j < jMax; j++) {
+			for (i = (r % iSqrtSize) * iSqrtSize; i < iMax; i++) {
+				System.out.println("J: " + j + "    " + "I: " + i);
+				reg[iCnt++] = super.getLatinSquare()[j][i];
+			}
+		}
+		return reg;
 	}
 	
 	protected int[] getRegion(int col, int Row) {
@@ -37,6 +51,10 @@ public class Sudoku extends LatinSquare{
 	}
 	
 	protected boolean isPartialSudoku() {
+		return false;
+	}
+	
+	public boolean isValidValue(int iCol, int iRow, int iValue) {
 		return false;
 	}
 }
