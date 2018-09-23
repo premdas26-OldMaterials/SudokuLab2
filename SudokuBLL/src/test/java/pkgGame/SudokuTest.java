@@ -19,6 +19,14 @@ public class SudokuTest {
 	}
 	
 	@Test
+	public void getRegionRowColTest1() throws java.lang.Exception {
+		int [] [] arr = {{1,2,3,4},{2,3,4,1},{3,4,2,1},{4,2,3,1}};
+		Sudoku puzzle = new Sudoku(arr);
+		int [] reg0 = {1,2,2,3};
+		assertTrue(Arrays.equals(puzzle.getRegion(0,0), reg0));
+	}
+	
+	@Test
 	public void isSudoku_test1() throws java.lang.Exception{
 		int[][] puzz = {{1,3,4,2},{2,4,3,1},{3,1,2,4},{4,2,1,3}};
 		Sudoku s = new Sudoku(puzz);
