@@ -83,10 +83,8 @@ public class Sudoku extends LatinSquare {
 				else if(super.hasDuplicates(this.getRegion(i))) {
 					return false;
 				}
-				else {
-					return true;
-				}
 			}
+			return true;
 		}
 		return false;
 	}
