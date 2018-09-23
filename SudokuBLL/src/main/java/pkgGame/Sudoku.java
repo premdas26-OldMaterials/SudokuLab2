@@ -52,7 +52,7 @@ public class Sudoku extends LatinSquare {
 	protected boolean isSudoku() {
 		if(super.isLatinSquare() && !super.ContainsZero())
 			for(int i=0; i<iSize;i++) {
-				if(hasAllValues(getRow(0),getRegion(i)){
+				if(hasAllValues(getRow(0),getRegion(i))){
 					return true;
 				}
 			}
@@ -83,15 +83,15 @@ public class Sudoku extends LatinSquare {
 		int temp[][]=super.getLatinSquare();
 		int t=temp[iRow][iCol];
 		temp[iRow][iCol]=iValue;
-		setLatinSquare=temp;
+		super.setLatinSquare(temp);
 		if(this.isPartialSudoku()){
 			temp[iRow][iCol]=t;
-			super.setLatinSquare=temp;
+			super.setLatinSquare(temp);
 			return true;
 		}
 		else {
 			temp[iRow][iCol]=t;
-			super.setLatinSquare=temp;
+			super.setLatinSquare(temp);
 			return false;
 		}
 	}
