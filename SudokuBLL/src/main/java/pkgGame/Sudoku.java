@@ -80,7 +80,19 @@ public class Sudoku extends LatinSquare {
 	}
 
 	public boolean isValidValue(int iCol, int iRow, int iValue) {
-		return false;
+		int temp[][]=super.getLatinSquare();
+		int t=temp[iRow][iCol];
+		temp[iRow][iCol]=iValue;
+		setLatinSquare=temp;
+		if(this.isPartialSudoku()){
+			temp[iRow][iCol]=t;
+			super.setLatinSquare=temp;
+			return true;
+		}
+		else {
+			temp[iRow][iCol]=t;
+			super.setLatinSquare=temp;
+			return false;
+		}
 	}
 }
-
