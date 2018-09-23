@@ -33,4 +33,25 @@ public class SudokuTest {
 		assertFalse(s.isSudoku());
 	}
 	
+	@Test
+	public void getPuzzleTest() throws java.lang.Exception {
+		int [] [] arr = {{1,2,3,4},{2,3,4,1},{3,4,2,1},{4,2,3,1}};
+		Sudoku puzzle = new Sudoku(arr);
+		assertTrue(Arrays.equals(puzzle.getPuzzle(), arr));
+	}
+	
+	@Test 
+	public void partialSudokuTest1() throws java.lang.Exception {
+		int [][] arr = {{1,0,3,4},{3,4,0,2},{2,1,4,3},{0,3,2,1}};
+		Sudoku puzzle = new Sudoku(arr);
+		assertTrue(puzzle.isPartialSudoku());
+	}
+	
+	@Test 
+	public void partialSudokuTest2() throws java.lang.Exception {
+		int [][] arr = {{1,0,3,4},{3,4,2,0},{2,1,4,3},{0,3,2,4}};
+		Sudoku puzzle = new Sudoku(arr);
+		assertFalse(puzzle.isPartialSudoku());
+	}
+	
 }
